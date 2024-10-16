@@ -1,0 +1,7 @@
+detectPlates module
+===================
+
+.. automodule:: detectPlates
+   :members:
+   :undoc-members:
+   :show-inheritance:

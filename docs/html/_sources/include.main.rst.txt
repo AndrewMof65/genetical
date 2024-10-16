@@ -1,0 +1,10 @@
+.. |uia| image:: /_images/logo.png
+         :scale: 100%
+         :target: /#
+.. |logo| image:: /_images/logo.png
+                 :scale: 100 %
+                 :target: /#
+.. |br| raw:: html
+
+    </br>
+

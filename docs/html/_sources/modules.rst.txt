@@ -1,0 +1,10 @@
+UralTechCentre
+==============
+
+.. toctree::
+   :maxdepth: 4
+
+   detectPlates
+   main
+   rtsp_server
+   settings
