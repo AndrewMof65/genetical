@@ -13,10 +13,10 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
   
   
@@ -30,11 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/translations.js"></script>
         <script src="_static/debug.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -54,9 +54,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Документация
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Логотип"/>
           
           </a>
 
@@ -89,9 +92,9 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">UralTechCentre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Release</a></li>
 </ul>
 
             
@@ -143,16 +146,22 @@
 
 <div class="genindex-jumpbox">
  <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
  | <a href="#Y"><strong>Y</strong></a>
  | <a href="#М"><strong>М</strong></a>
  
@@ -160,7 +169,15 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.adjust_contrast_brightness">adjust_contrast_brightness() (метод detectPlates.Detector)</a>
+      <li><a href="settings.html#settings.settings.ANNOTATION">ANNOTATION (атрибут settings.settings)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.BOXES">BOXES (атрибут settings.settings)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -168,13 +185,11 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.cars_present">cars_present() (метод detectPlates.Detector)</a>
-</li>
-      <li><a href="detectPlates.html#detectPlates.Detector.change_brightness">change_brightness() (метод detectPlates.Detector)</a>
+      <li><a href="yolo_cars.html#yolo_cars.yolo_cars.cars_present">cars_present() (метод yolo_cars.yolo_cars)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.check_text_pattern">check_text_pattern() (метод detectPlates.Detector)</a>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.check_text_pattern">check_text_pattern() (метод paddle_ocr.paddle_ocr)</a>
 </li>
       <li><a href="detectPlates.html#detectPlates.checkConfig">checkConfig() (в модуле detectPlates)</a>
 </li>
@@ -184,10 +199,20 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.DEBUG">DEBUG (атрибут settings.settings)</a>
+</li>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.detect_num">detect_num() (метод paddle_ocr.paddle_ocr)</a>
+
+      <ul>
+        <li><a href="yolo_ocr.html#yolo_ocr.yolo_ocr.detect_num">(метод yolo_ocr.yolo_ocr)</a>
+</li>
+      </ul></li>
       <li><a href="detectPlates.html#detectPlates.Detector.detection">detection() (метод detectPlates.Detector)</a>
 </li>
       <li><a href="detectPlates.html#detectPlates.Detector">Detector (класс в detectPlates)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     detectPlates
 
@@ -195,8 +220,8 @@
         <li><a href="detectPlates.html#module-detectPlates">модуль</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.DEVICE">DEVICE (атрибут settings.settings)</a>
+</li>
       <li><a href="rtsp_server.html#rtsp_server.SensorFactory.do_configure">do_configure() (метод rtsp_server.SensorFactory)</a>
 </li>
       <li><a href="rtsp_server.html#rtsp_server.SensorFactory.do_create_element">do_create_element() (метод rtsp_server.SensorFactory)</a>
@@ -209,6 +234,10 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="mysql_api.html#mysql_api.mysql.get_status">get_status() (метод mysql_api.mysql)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rtsp_server.html#rtsp_server.GstServer">GstServer (класс в rtsp_server)</a>
 </li>
   </ul></td>
@@ -219,13 +248,27 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="detectPlates.html#detectPlates.Detector.imgs_of_boxes">imgs_of_boxes() (метод detectPlates.Detector)</a>
 </li>
-      <li><a href="detectPlates.html#detectPlates.Detector.increase_brightness">increase_brightness() (метод detectPlates.Detector)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rtsp_server.html#rtsp_server.SensorFactory.indicator">indicator() (метод rtsp_server.SensorFactory)</a>
 </li>
       <li><a href="detectPlates.html#detectPlates.Detector.insert_img_control">insert_img_control() (метод detectPlates.Detector)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.K_SIZE">K_SIZE (атрибут settings.settings)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.LETTERS">LETTERS (атрибут settings.settings)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -242,13 +285,32 @@
       </ul></li>
       <li><a href="detectPlates.html#detectPlates.main">main() (в модуле detectPlates)</a>
 </li>
+      <li><a href="settings.html#settings.settings.MIN_AREA">MIN_AREA (атрибут settings.settings)</a>
+</li>
+      <li><a href="detectPlates.html#detectPlates.Detector.mydb_obj">mydb_obj (атрибут detectPlates.Detector)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.main_ocr">main_ocr() (метод detectPlates.Detector)</a>
+      <li><a href="mysql_api.html#mysql_api.mysql">mysql (класс в mysql_api)</a>
 </li>
-      <li><a href="detectPlates.html#detectPlates.Detector.mysql_connect">mysql_connect() (метод detectPlates.Detector)</a>
+      <li>
+    mysql_api
+
+      <ul>
+        <li><a href="mysql_api.html#module-mysql_api">модуль</a>
 </li>
-      <li><a href="detectPlates.html#detectPlates.Detector.mysql_query">mysql_query() (метод detectPlates.Detector)</a>
+      </ul></li>
+      <li><a href="mysql_api.html#mysql_api.mysql.mysql_connect">mysql_connect() (метод mysql_api.mysql)</a>
+</li>
+      <li><a href="mysql_api.html#mysql_api.mysql.mysql_query">mysql_query() (метод mysql_api.mysql)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.NUMSHOTS">NUMSHOTS (атрибут settings.settings)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -256,6 +318,12 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="detectPlates.html#detectPlates.Detector.ocr">ocr (атрибут detectPlates.Detector)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.OCR_SAVE">OCR_SAVE (атрибут settings.settings)</a>
+</li>
       <li><a href="rtsp_server.html#rtsp_server.SensorFactory.on_need_data">on_need_data() (метод rtsp_server.SensorFactory)</a>
 </li>
   </ul></td>
@@ -264,7 +332,20 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.paddle_proc">paddle_proc() (метод detectPlates.Detector)</a>
+      <li>
+    paddle_ocr
+
+      <ul>
+        <li><a href="paddle_ocr.html#module-paddle_ocr">модуль</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr">paddle_ocr (класс в paddle_ocr)</a>
+</li>
+      <li><a href="settings.html#settings.settings.PADDLE_OCR_PATH">PADDLE_OCR_PATH (атрибут settings.settings)</a>
+</li>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.paddle_proc">paddle_proc() (метод paddle_ocr.paddle_ocr)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -272,17 +353,17 @@
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.qualityUp">qualityUp() (метод detectPlates.Detector)</a>
+      <li><a href="yolo_ocr.html#yolo_ocr.yolo_ocr.qualityUp">qualityUp() (метод yolo_ocr.yolo_ocr)</a>
 </li>
-      <li><a href="detectPlates.html#detectPlates.Detector.qualityUp0">qualityUp0() (метод detectPlates.Detector)</a>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp0">qualityUp0() (метод paddle_ocr.paddle_ocr)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.qualityUp1">qualityUp1() (метод detectPlates.Detector)</a>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp1">qualityUp1() (метод paddle_ocr.paddle_ocr)</a>
 </li>
-      <li><a href="detectPlates.html#detectPlates.Detector.qualityUp2">qualityUp2() (метод detectPlates.Detector)</a>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp2">qualityUp2() (метод paddle_ocr.paddle_ocr)</a>
 </li>
-      <li><a href="detectPlates.html#detectPlates.Detector.qualityUp3">qualityUp3() (метод detectPlates.Detector)</a>
+      <li><a href="paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp3">qualityUp3() (метод paddle_ocr.paddle_ocr)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -290,7 +371,9 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.rotate_image">rotate_image() (метод detectPlates.Detector)</a>
+      <li><a href="settings.html#settings.settings.RESOLUTION">RESOLUTION (атрибут settings.settings)</a>
+</li>
+      <li><a href="yolo_cars.html#yolo_cars.yolo_cars.rotate_image">rotate_image() (метод yolo_cars.yolo_cars)</a>
 </li>
       <li>
     rtsp_server
@@ -301,6 +384,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="detectPlates.html#detectPlates.Detector.rtsp_server">rtsp_server (атрибут detectPlates.Detector)</a>
+</li>
       <li><a href="detectPlates.html#detectPlates.Detector.run">run() (метод detectPlates.Detector)</a>
 
       <ul>
@@ -313,19 +398,41 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.saveInDataSet">saveInDataSet() (метод detectPlates.Detector)</a>
+      <li><a href="yolo_cars.html#yolo_cars.yolo_cars.saveInDataSet">saveInDataSet() (метод yolo_cars.yolo_cars)</a>
 </li>
       <li><a href="rtsp_server.html#rtsp_server.SensorFactory">SensorFactory (класс в rtsp_server)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rtsp_server.html#rtsp_server.SensorFactory.set_image">set_image() (метод rtsp_server.SensorFactory)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     settings
 
       <ul>
         <li><a href="settings.html#module-settings">модуль</a>
+</li>
+      </ul></li>
+      <li><a href="settings.html#settings.settings">settings (класс в settings)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="settings.html#settings.settings.TEST">TEST (атрибут settings.settings)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="detectPlates.html#detectPlates.Detector.update_tbl">update_tbl() (метод detectPlates.Detector)</a>
+
+      <ul>
+        <li><a href="mysql_api.html#mysql_api.mysql.update_tbl">(метод mysql_api.mysql)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -334,11 +441,41 @@
 <h2 id="Y">Y</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.yolo_obb">yolo_obb() (метод detectPlates.Detector)</a>
+      <li><a href="settings.html#settings.settings.YOLO_CAR_PATH">YOLO_CAR_PATH (атрибут settings.settings)</a>
+</li>
+      <li>
+    yolo_cars
+
+      <ul>
+        <li><a href="yolo_cars.html#module-yolo_cars">модуль</a>
+</li>
+      </ul></li>
+      <li><a href="detectPlates.html#detectPlates.Detector.yolo_cars">yolo_cars (атрибут detectPlates.Detector)</a>
+
+      <ul>
+        <li><a href="yolo_cars.html#yolo_cars.yolo_cars">(класс в yolo_cars)</a>
+</li>
+      </ul></li>
+      <li><a href="yolo_cars.html#yolo_cars.yolo_cars.yolo_obb">yolo_obb() (метод yolo_cars.yolo_cars)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="detectPlates.html#detectPlates.Detector.yolo_proc">yolo_proc() (метод detectPlates.Detector)</a>
+      <li><a href="settings.html#settings.settings.YOLO_OBB_PATH">YOLO_OBB_PATH (атрибут settings.settings)</a>
+</li>
+      <li>
+    yolo_ocr
+
+      <ul>
+        <li><a href="yolo_ocr.html#module-yolo_ocr">модуль</a>
+</li>
+      </ul></li>
+      <li><a href="yolo_ocr.html#yolo_ocr.yolo_ocr">yolo_ocr (класс в yolo_ocr)</a>
+</li>
+      <li><a href="settings.html#settings.settings.YOLO_OCR1_PATH">YOLO_OCR1_PATH (атрибут settings.settings)</a>
+</li>
+      <li><a href="settings.html#settings.settings.YOLO_OCR2_PATH">YOLO_OCR2_PATH (атрибут settings.settings)</a>
+</li>
+      <li><a href="yolo_ocr.html#yolo_ocr.yolo_ocr.yolo_proc">yolo_proc() (метод yolo_ocr.yolo_ocr)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -354,9 +491,17 @@
 </li>
         <li><a href="main.html#module-main">main</a>
 </li>
+        <li><a href="mysql_api.html#module-mysql_api">mysql_api</a>
+</li>
+        <li><a href="paddle_ocr.html#module-paddle_ocr">paddle_ocr</a>
+</li>
         <li><a href="rtsp_server.html#module-rtsp_server">rtsp_server</a>
 </li>
         <li><a href="settings.html#module-settings">settings</a>
+</li>
+        <li><a href="yolo_cars.html#module-yolo_cars">yolo_cars</a>
+</li>
+        <li><a href="yolo_ocr.html#module-yolo_ocr">yolo_ocr</a>
 </li>
       </ul></li>
   </ul></td>

@@ -1,0 +1,7 @@
+paddle\_ocr module
+==================
+
+.. automodule:: paddle_ocr
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release &mdash; документация Документация 1.0.0rc1</title>
+  <title>yolo_cars module &mdash; документация Документация 1.0.0rc1</title>
   
 
   
@@ -20,7 +20,7 @@
   
   
   
-    <link rel="canonical" href="Falsemodules.html"/>
+    <link rel="canonical" href="Falseyolo_cars.html"/>
   
 
   
@@ -41,8 +41,8 @@
     
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
-    <link rel="next" title="detectPlates module" href="detectPlates.html" />
-    <link rel="prev" title="УралТехЦентр Стажировка от УИИ’s documentation!" href="index.html" /> 
+    <link rel="next" title="yolo_ocr module" href="yolo_ocr.html" />
+    <link rel="prev" title="settings module" href="settings.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,14 +96,14 @@
             
               <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Release</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Release</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="settings.html">settings module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">yolo_cars module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
 </ul>
 </li>
@@ -143,7 +143,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Release</li>
+          <li><a href="modules.html">Release</a> &raquo;</li>
+        
+      <li>yolo_cars module</li>
     
   </ul>
 
@@ -153,20 +155,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="release">
-<h1>Release<a class="headerlink" href="#release" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="settings.html">settings module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
-</ul>
-</div>
+  <div class="section" id="module-yolo_cars">
+<span id="yolo-cars-module"></span><h1>yolo_cars module<a class="headerlink" href="#module-yolo_cars" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Created on Thu Oct 17 04:57:25 2024</p>
+<p>&#64;author: Стажеры группы УИИ</p>
+<dl class="py class">
+<dt id="yolo_cars.yolo_cars">
+<em class="property">class </em><code class="sig-prename descclassname">yolo_cars.</code><code class="sig-name descname">yolo_cars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">car_pt</span></em>, <em class="sig-param"><span class="n">obb_pt</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_cars.html#yolo_cars"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_cars.yolo_cars" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<dl class="py method">
+<dt id="yolo_cars.yolo_cars.cars_present">
+<code class="sig-name descname">cars_present</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">images</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_cars.html#yolo_cars.cars_present"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_cars.yolo_cars.cars_present" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="yolo_cars.yolo_cars.rotate_image">
+<code class="sig-name descname">rotate_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_cars.html#yolo_cars.rotate_image"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_cars.yolo_cars.rotate_image" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поворот изображения вокруг центра center на угол angle</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="yolo_cars.yolo_cars.saveInDataSet">
+<code class="sig-name descname">saveInDataSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img</span></em>, <em class="sig-param"><span class="n">box</span></em>, <em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_cars.html#yolo_cars.saveInDataSet"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_cars.yolo_cars.saveInDataSet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сохранение изображения в файл с одновременной записью разметки в файл.
+Собственно создание и разметка датасета самой YOLO_OBB</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="yolo_cars.yolo_cars.yolo_obb">
+<code class="sig-name descname">yolo_obb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">images</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_cars.html#yolo_cars.yolo_obb"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_cars.yolo_cars.yolo_obb" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод распознавания рамок от YOLO_OBB
+Свой датасет</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -177,10 +202,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="detectPlates.html" class="btn btn-neutral float-right" title="detectPlates module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="yolo_ocr.html" class="btn btn-neutral float-right" title="yolo_ocr module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="УралТехЦентр Стажировка от УИИ’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
+        <a href="settings.html" class="btn btn-neutral float-left" title="settings module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
       
     </div>
   

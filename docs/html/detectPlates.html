@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="ru" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>detectPlates module &mdash; документация Документация 1.0.0rc1</title>
@@ -14,10 +13,10 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
   
   
@@ -31,11 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/translations.js"></script>
         <script src="_static/debug.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -43,7 +42,7 @@
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
     <link rel="next" title="main module" href="main.html" />
-    <link rel="prev" title="UralTechCentre" href="modules.html" /> 
+    <link rel="prev" title="Release" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,9 +56,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Документация
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Логотип"/>
           
           </a>
 
@@ -92,13 +94,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">UralTechCentre</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Release</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">detectPlates module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="settings.html">settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
 </ul>
 </li>
 </ul>
@@ -137,7 +143,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">UralTechCentre</a> &raquo;</li>
+          <li><a href="modules.html">Release</a> &raquo;</li>
         
       <li>detectPlates module</li>
     
@@ -149,169 +155,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="module-detectPlates">
-<span id="detectplates-module"></span><h1>detectPlates module<a class="headerlink" href="#module-detectPlates" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="module-detectPlates">
+<span id="detectplates-module"></span><h1>detectPlates module<a class="headerlink" href="#module-detectPlates" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Created on Wed Aug  7 14:56:29 2024</p>
-<p>&#64;author: afomenko</p>
+<p>&#64;author: Стажеры группы УИИ</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="detectPlates.Detector">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectPlates.</span></span><span class="sig-name descname"><span class="pre">Detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">room</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">car_pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obb_pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ocr1_pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ocr2_pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ocr_paddle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bd_login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bd_passwd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bd_host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bd_port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bd_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bd_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minArea</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality_up</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysqloff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'false'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtsp_serv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'on'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ocr_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'yolo'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector" title="Ссылка на это определение">¶</a></dt>
+<dt id="detectPlates.Detector">
+<em class="property">class </em><code class="sig-prename descclassname">detectPlates.</code><code class="sig-name descname">Detector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">room</span></em>, <em class="sig-param"><span class="n">capture_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">port</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">car_pt</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">obb_pt</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">ocr1_pt</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">ocr2_pt</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">ocr_paddle</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">bd_login</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">bd_passwd</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">bd_host</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">bd_port</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">bd_db</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">bd_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">letters</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">box</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">k_size</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">minArea</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">quality_up</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mysqloff</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'false'</span></em>, <em class="sig-param"><span class="n">rtsp_serv</span><span class="o">=</span><span class="default_value">'on'</span></em>, <em class="sig-param"><span class="n">ocr_type</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'yolo'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector" title="Ссылка на это определение">¶</a></dt>
 <dd><blockquote>
 <div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </div></blockquote>
 <p>Класс детектирования и распознавания автомобильных номеров в потоке кадров</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.adjust_contrast_brightness">
-<span class="sig-name descname"><span class="pre">adjust_contrast_brightness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.adjust_contrast_brightness"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.adjust_contrast_brightness" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Увеличение яркости и контрастности изображения</p>
+<dt id="detectPlates.Detector.detection">
+<code class="sig-name descname">detection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.detection"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector.detection" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Фуекция детектирования авто в боксах, их номерных рамок и определение самих номнров</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.cars_present">
-<span class="sig-name descname"><span class="pre">cars_present</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.cars_present"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.cars_present" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.change_brightness">
-<span class="sig-name descname"><span class="pre">change_brightness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.change_brightness"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.change_brightness" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Осветление/затемнение изображения</p>
+<dt id="detectPlates.Detector.draw_out_img">
+<code class="sig-name descname">draw_out_img</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img</span></em>, <em class="sig-param"><span class="n">data_out</span></em>, <em class="sig-param"><span class="n">plate_nums</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.draw_out_img"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector.draw_out_img" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Функция визуализации детектированных данных</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.check_text_pattern">
-<span class="sig-name descname"><span class="pre">check_text_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.check_text_pattern"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.check_text_pattern" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.detection">
-<span class="sig-name descname"><span class="pre">detection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.detection"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.detection" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.draw_out_img">
-<span class="sig-name descname"><span class="pre">draw_out_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plate_nums</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.draw_out_img"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.draw_out_img" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.imgs_of_boxes">
-<span class="sig-name descname"><span class="pre">imgs_of_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allboxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxnum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.imgs_of_boxes"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.imgs_of_boxes" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Разделение кадра на 4 бокса для авто</p>
+<dt id="detectPlates.Detector.imgs_of_boxes">
+<code class="sig-name descname">imgs_of_boxes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">full_image</span></em>, <em class="sig-param"><span class="n">allboxes</span></em>, <em class="sig-param"><span class="n">boxnum</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.imgs_of_boxes"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector.imgs_of_boxes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Разделение кадра на 4 бокса для детектирования авто и их номеров</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.increase_brightness">
-<span class="sig-name descname"><span class="pre">increase_brightness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.increase_brightness"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.increase_brightness" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Осветление изображения</p>
+<dt id="detectPlates.Detector.insert_img_control">
+<code class="sig-name descname">insert_img_control</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">info</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.insert_img_control"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector.insert_img_control" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Фуекция отрисовки информации и ошибок на контрольрном изображении</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="detectPlates.Detector.mydb_obj">
+<code class="sig-name descname">mydb_obj</code><a class="headerlink" href="#detectPlates.Detector.mydb_obj" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Соединение с БД mySQL</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="detectPlates.Detector.ocr">
+<code class="sig-name descname">ocr</code><a class="headerlink" href="#detectPlates.Detector.ocr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Инициализация OCR модели PADDLE детектирования номера машины в боксе</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="detectPlates.Detector.rtsp_server">
+<code class="sig-name descname">rtsp_server</code><a class="headerlink" href="#detectPlates.Detector.rtsp_server" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Инициализация rtsp сервера</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.insert_img_control">
-<span class="sig-name descname"><span class="pre">insert_img_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.insert_img_control"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.insert_img_control" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.main_ocr">
-<span class="sig-name descname"><span class="pre">main_ocr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.main_ocr"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.main_ocr" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Распознавание номера - модель YOLO_OBB
-Свой датасет - обучение</p>
+<dt id="detectPlates.Detector.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">poolsize</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">allboxes</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">boxnum</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">test</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.run"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector.run" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Основная функция с бесконечным циклом считывания кадров и детектированием рамок и распознавания номеров</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.mysql_connect">
-<span class="sig-name descname"><span class="pre">mysql_connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.mysql_connect"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.mysql_connect" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Функция соединения с базой данных</p>
+<dt id="detectPlates.Detector.update_tbl">
+<code class="sig-name descname">update_tbl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">is_car</span></em>, <em class="sig-param"><span class="n">car_num</span></em>, <em class="sig-param"><span class="n">room_name</span></em>, <em class="sig-param"><span class="n">box_num</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.update_tbl"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.Detector.update_tbl" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Фуекция записи в таблицу данных о машинах в боксах и их номерах</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.mysql_query">
-<span class="sig-name descname"><span class="pre">mysql_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.mysql_query"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.mysql_query" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Функция для простого запроса в базу - без ответа</p>
+<dl class="py attribute">
+<dt id="detectPlates.Detector.yolo_cars">
+<code class="sig-name descname">yolo_cars</code><a class="headerlink" href="#detectPlates.Detector.yolo_cars" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Инициализация моделtq НС для детектирования машины и рамки номера машины в боксе</p>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.paddle_proc">
-<span class="sig-name descname"><span class="pre">paddle_proc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.paddle_proc"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.paddle_proc" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.qualityUp">
-<span class="sig-name descname"><span class="pre">qualityUp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.qualityUp"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.qualityUp" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Увеличение качества изображения или фильтрация перед распознаванием
-номера OCR</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.qualityUp0">
-<span class="sig-name descname"><span class="pre">qualityUp0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.qualityUp0"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.qualityUp0" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Увеличение качества изображения или фильтрация перед распознаванием
-номера OCR</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.qualityUp1">
-<span class="sig-name descname"><span class="pre">qualityUp1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.qualityUp1"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.qualityUp1" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Увеличение качества изображения или фильтрация перед распознаванием
-номера OCR</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.qualityUp2">
-<span class="sig-name descname"><span class="pre">qualityUp2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.qualityUp2"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.qualityUp2" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Увеличение качества изображения или фильтрация перед распознаванием
-номера OCR</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.qualityUp3">
-<span class="sig-name descname"><span class="pre">qualityUp3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.qualityUp3"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.qualityUp3" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Увеличение качества изображения или фильтрация перед распознаванием
-номера OCR</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.rotate_image">
-<span class="sig-name descname"><span class="pre">rotate_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.rotate_image"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.rotate_image" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Поворот изображения вокруг центра center на угол angle</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poolsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allboxes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.run"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.run" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Запуск детектирования рамки и распознавания номера</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.saveInDataSet">
-<span class="sig-name descname"><span class="pre">saveInDataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.saveInDataSet"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.saveInDataSet" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Сохранение изображения в файл с одновременной записью разметки в файл.
-Собственно создание и разметка датасета самой YOLO_OBB</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.yolo_obb">
-<span class="sig-name descname"><span class="pre">yolo_obb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.yolo_obb"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.yolo_obb" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Метод распознавания рамок от YOLO_OBB 
-Свой датасет</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="detectPlates.Detector.yolo_proc">
-<span class="sig-name descname"><span class="pre">yolo_proc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imgs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#Detector.yolo_proc"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.Detector.yolo_proc" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="detectPlates.checkConfig">
-<span class="sig-prename descclassname"><span class="pre">detectPlates.</span></span><span class="sig-name descname"><span class="pre">checkConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iniparam</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#checkConfig"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.checkConfig" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
+<dt id="detectPlates.checkConfig">
+<code class="sig-prename descclassname">detectPlates.</code><code class="sig-name descname">checkConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iniparam</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#checkConfig"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.checkConfig" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверка конфигурационного файла. При отсутствии значений - установить по умолчанию</p>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="detectPlates.main">
-<span class="sig-prename descclassname"><span class="pre">detectPlates.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#main"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#detectPlates.main" title="Ссылка на это определение">¶</a></dt>
-<dd></dd></dl>
+<dt id="detectPlates.main">
+<code class="sig-prename descclassname">detectPlates.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/detectPlates.html#main"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#detectPlates.main" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Запуск всего функционала</p>
+</dd></dl>
 
-</section>
+</div>
 
 
            </div>
@@ -324,7 +253,7 @@
         <a href="main.html" class="btn btn-neutral float-right" title="main module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="modules.html" class="btn btn-neutral float-left" title="UralTechCentre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="Release" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
       
     </div>
   

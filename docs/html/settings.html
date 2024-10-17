@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="ru" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>settings module &mdash; документация Документация 1.0.0rc1</title>
@@ -14,10 +13,10 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
   
   
@@ -31,17 +30,18 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/translations.js"></script>
         <script src="_static/debug.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="yolo_cars module" href="yolo_cars.html" />
     <link rel="prev" title="rtsp_server module" href="rtsp_server.html" /> 
 </head>
 
@@ -56,9 +56,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Документация
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Логотип"/>
           
           </a>
 
@@ -91,13 +94,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">UralTechCentre</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Release</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
 </ul>
 </li>
 </ul>
@@ -136,7 +143,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">UralTechCentre</a> &raquo;</li>
+          <li><a href="modules.html">Release</a> &raquo;</li>
         
       <li>settings module</li>
     
@@ -148,9 +155,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="module-settings">
-<span id="settings-module"></span><h1>settings module<a class="headerlink" href="#module-settings" title="Permalink to this heading">¶</a></h1>
-</section>
+  <div class="section" id="module-settings">
+<span id="settings-module"></span><h1>settings module<a class="headerlink" href="#module-settings" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Created on Wed Aug  7 14:56:29 2024</p>
+<p>&#64;author: Стажеры группы УИИ</p>
+<dl class="py class">
+<dt id="settings.settings">
+<em class="property">class </em><code class="sig-prename descclassname">settings.</code><code class="sig-name descname">settings</code><a class="reference internal" href="_modules/settings.html#settings"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#settings.settings" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Класс констант - статических настроек проекта</p>
+<dl class="py attribute">
+<dt id="settings.settings.ANNOTATION">
+<code class="sig-name descname">ANNOTATION</code><em class="property"> = False</em><a class="headerlink" href="#settings.settings.ANNOTATION" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для разметки датасета</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.BOXES">
+<code class="sig-name descname">BOXES</code><em class="property"> = ({'pt1': (2, 100), 'pt2': (450, 1000), 'color': (255, 0, 0), 'thickness': 4}, {'pt1': (550, 100), 'pt2': (950, 800), 'color': (0, 255, 0), 'thickness': 4}, {'pt1': (980, 100), 'pt2': (1270, 600), 'color': (0, 0, 255), 'thickness': 4}, {'pt1': (1290, 100), 'pt2': (1700, 750), 'color': (255, 0, 255), 'thickness': 4})</em><a class="headerlink" href="#settings.settings.BOXES" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Координаты бокса на видео, цвет BGR, толщина линии</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.DEBUG">
+<code class="sig-name descname">DEBUG</code><em class="property"> = False</em><a class="headerlink" href="#settings.settings.DEBUG" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для отладки</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.DEVICE">
+<code class="sig-name descname">DEVICE</code><em class="property"> = 'cpu'</em><a class="headerlink" href="#settings.settings.DEVICE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.K_SIZE">
+<code class="sig-name descname">K_SIZE</code><em class="property"> = [1, 2, 2.5, 2.4]</em><a class="headerlink" href="#settings.settings.K_SIZE" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Коэффициент увеличения картинки каждого бокса для детекции рамки номера</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.LETTERS">
+<code class="sig-name descname">LETTERS</code><em class="property"> = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'E', 'H', 'K', 'M', 'O', 'P', 'T', 'X', 'Y']</em><a class="headerlink" href="#settings.settings.LETTERS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Символы на ноерах - не трогать</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.MIN_AREA">
+<code class="sig-name descname">MIN_AREA</code><em class="property"> = [6000, 7000, 8000, 8000]</em><a class="headerlink" href="#settings.settings.MIN_AREA" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Минимальная площадь прямоугольника номера для каждого бокса с учетом K_SIZE</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.NUMSHOTS">
+<code class="sig-name descname">NUMSHOTS</code><em class="property"> = 200</em><a class="headerlink" href="#settings.settings.NUMSHOTS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для отладки Номер кадра в видеофайле</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.OCR_SAVE">
+<code class="sig-name descname">OCR_SAVE</code><em class="property"> = False</em><a class="headerlink" href="#settings.settings.OCR_SAVE" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Включение сохрпнения изображения номеров для датасета</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.PADDLE_OCR_PATH">
+<code class="sig-name descname">PADDLE_OCR_PATH</code><em class="property"> = 'paddle'</em><a class="headerlink" href="#settings.settings.PADDLE_OCR_PATH" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к весовым коэффициентам модели PADDLE</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.RESOLUTION">
+<code class="sig-name descname">RESOLUTION</code><em class="property"> = (1920, 1080)</em><a class="headerlink" href="#settings.settings.RESOLUTION" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Разрешение камеры</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.TEST">
+<code class="sig-name descname">TEST</code><em class="property"> = False</em><a class="headerlink" href="#settings.settings.TEST" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для тестирования на файлаз, а не на потоке</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.YOLO_CAR_PATH">
+<code class="sig-name descname">YOLO_CAR_PATH</code><em class="property"> = 'yolo_obb/yolov11m_car.pt'</em><a class="headerlink" href="#settings.settings.YOLO_CAR_PATH" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к весовым коэффициентам для распознавания автомобиля в боксе</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.YOLO_OBB_PATH">
+<code class="sig-name descname">YOLO_OBB_PATH</code><em class="property"> = 'yolo_obb/yolov8s_obb.pt'</em><a class="headerlink" href="#settings.settings.YOLO_OBB_PATH" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к весовым коэффициентам для распознавания номерной рамки на автомобиле</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.YOLO_OCR1_PATH">
+<code class="sig-name descname">YOLO_OCR1_PATH</code><em class="property"> = 'yolo_obb/yolo11m_ocr1.pt'</em><a class="headerlink" href="#settings.settings.YOLO_OCR1_PATH" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к весовым коэффициентам для распознавания номера на номерной рамк автомобиля
+для первых двух боксов</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="settings.settings.YOLO_OCR2_PATH">
+<code class="sig-name descname">YOLO_OCR2_PATH</code><em class="property"> = 'yolo_obb/yolo11m_ocr2.pt'</em><a class="headerlink" href="#settings.settings.YOLO_OCR2_PATH" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к весовым коэффициентам для распознавания номера на номерной рамк автомобиля
+для последних двух боксов</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 
 
            </div>
@@ -159,6 +274,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="yolo_cars.html" class="btn btn-neutral float-right" title="yolo_cars module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="rtsp_server.html" class="btn btn-neutral float-left" title="rtsp_server module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>

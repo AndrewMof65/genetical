@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paddle_ocr &mdash; документация Документация 1.0.0rc1</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="False_modules/paddle_ocr.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/debug.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Логотип"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0rc1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Release</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Документация</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Код модуля</a> &raquo;</li>
+        
+      <li>paddle_ocr</li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Исходный код paddle_ocr</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Thu Oct 17 04:34:59 2024</span>
+
+<span class="sd">@author: Стажеры группы УИИ</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#from paddleocr import PaddleOCR</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="n">OCR_SAVE</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">OCR_SAVE</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span>
+
+<div class="viewcode-block" id="paddle_ocr"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr">[документация]</a><span class="k">class</span> <span class="nc">paddle_ocr</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ocr_paddle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ocr_model</span> <span class="o">=</span> <span class="n">PaddleOCR</span><span class="p">(</span><span class="n">rec_model_dir</span><span class="o">=</span><span class="n">ocr_paddle</span><span class="p">,</span> <span class="n">rec_char_dict_path</span><span class="o">=</span><span class="n">ocr_paddle</span><span class="o">+</span><span class="s2">&quot;/aug_dict.txt&quot;</span><span class="p">,</span> <span class="n">use_angle_cls</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>  <span class="c1"># Для только английского языка</span>
+<div class="viewcode-block" id="paddle_ocr.detect_num"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.detect_num">[документация]</a>    <span class="k">def</span> <span class="nf">detect_num</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">images</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Распознавание номера - модель YOLO_OBB</span>
+<span class="sd">        Свой датасет - обучение&quot;&quot;&quot;</span> 
+        <span class="n">imgs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">res_map</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">img</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">res_map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="kc">True</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2GRAY</span><span class="p">)</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_GRAY2RGB</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                       <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qualityUp0</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                       <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qualityUp1</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                       <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qualityUp2</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                       <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qualityUp3</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+                <span class="n">texts</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">rc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ocr_model</span><span class="o">.</span><span class="n">ocr</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">rc</span> <span class="ow">and</span> <span class="n">rc</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="c1"># Вытаскиваем данные образы, которые распознаны и фильтруем по шаблонам</span>
+                    <span class="n">valid_res</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rc</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#if check_text_pattern(res[1][0])]</span>
+
+                    <span class="k">if</span> <span class="n">valid_res</span><span class="p">:</span>
+                        <span class="n">boxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">valid_res</span><span class="p">]</span>
+                        <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">valid_res</span><span class="p">]</span>
+                        <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">valid_res</span><span class="p">]</span>
+
+                        <span class="c1"># Выводим информацию о распознанных текстах</span>
+                        <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Номер: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">, Уверенность: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Координаты: </span><span class="si">{</span><span class="n">box</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span> <span class="n">texts</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">texts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span> <span class="n">texts</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span> <span class="c1"># Для квадратного номера будет две строки текста, надо тестировать</span>
+                <span class="k">else</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> 
+                <span class="n">imgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span><span class="k">return</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+        <span class="n">plate_nums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">paddle_proc</span><span class="p">(</span><span class="n">results</span><span class="p">,</span><span class="n">res_map</span><span class="p">,</span><span class="n">imgs</span><span class="p">)</span>
+<span class="c1"># сохрпнение изображения номера если стоит параметр</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res_map</span><span class="p">)):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">plate_nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">OCR_SAVE</span><span class="p">):</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="s2">&quot;ocr/box_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span> <span class="n">plate_nums</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">img_num</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span><span class="n">images</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">img_num</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+    
+        <span class="k">if</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">):</span><span class="nb">print</span><span class="p">(</span><span class="n">plate_nums</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">plate_nums</span></div>
+<div class="viewcode-block" id="paddle_ocr.paddle_proc"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.paddle_proc">[документация]</a>    <span class="k">def</span> <span class="nf">paddle_proc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">results</span><span class="p">,</span><span class="n">res_map</span><span class="p">,</span><span class="n">imgs</span><span class="p">):</span>
+        <span class="n">plate_nums</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">res_map</span><span class="p">)</span> 
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">results</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res_map</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">res_map</span><span class="p">[</span><span class="n">k</span><span class="p">]):</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_text_pattern</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="n">plate_nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span> 
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;box-&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+                        <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">else</span><span class="p">:</span> 
+                        <span class="c1">#plate_nums[i] = &quot;no number&quot;</span>
+                        <span class="n">plate_nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="n">result</span><span class="o">=</span><span class="kc">None</span>  
+                <span class="k">else</span><span class="p">:</span> <span class="k">continue</span>
+        <span class="k">return</span> <span class="n">plate_nums</span> </div>
+<div class="viewcode-block" id="paddle_ocr.check_text_pattern"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.check_text_pattern">[документация]</a>    <span class="k">def</span> <span class="nf">check_text_pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">):</span>
+        <span class="c1"># Паттерн для текста</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[A-Za-z]\d</span><span class="si">{3}</span><span class="s1">[A-Za-z]</span><span class="si">{2}</span><span class="s1">\d{2,3}$&#39;</span>
+        <span class="n">t_text</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">def</span> <span class="nf">replace_digits_and_letters</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>            
+                <span class="c1"># Меняем символы на местах букв</span>
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;V&#39;</span> <span class="ow">or</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span>
+                               
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;V&#39;</span> <span class="ow">or</span> <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span>
+                
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;8&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;V&#39;</span> <span class="ow">or</span> <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Y&#39;</span>
+                
+                <span class="c1"># Меняем символы на местах цифр</span>
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+                
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+                
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+                <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+                
+                                
+                <span class="c1"># Цифровые позиции могут продолжаться до конца строки в зависимости от паттерна</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
+                    <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+                        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+                    <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
+                        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+            
+            <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="c1"># Преобразуем текст по правилам замены</span>
+        <span class="n">transformed_text</span> <span class="o">=</span> <span class="n">replace_digits_and_letters</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>     
+        <span class="c1"># Проверяем соответствие паттерну</span>
+        <span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">transformed_text</span><span class="p">)):</span>
+            <span class="n">t_text</span> <span class="o">=</span> <span class="n">transformed_text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>  <span class="c1">#Преобразуем текст в верхний регистр </span>
+        <span class="k">else</span><span class="p">:</span> <span class="n">t_text</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">t_text</span></div>
+    
+<div class="viewcode-block" id="paddle_ocr.qualityUp0"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp0">[документация]</a>    <span class="k">def</span> <span class="nf">qualityUp0</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">image</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Увеличение качества изображения или фильтрация перед распознаванием</span>
+<span class="sd">        номера OCR&quot;&quot;&quot;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="n">img</span> </div>
+<div class="viewcode-block" id="paddle_ocr.qualityUp1"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp1">[документация]</a>    <span class="k">def</span> <span class="nf">qualityUp1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">image</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Увеличение качества изображения или фильтрация перед распознаванием</span>
+<span class="sd">        номера OCR&quot;&quot;&quot;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">kernel</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getStructuringElement</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">MORPH_ELLIPSE</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">morphologyEx</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">MORPH_OPEN</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="n">img</span> </div>
+<div class="viewcode-block" id="paddle_ocr.qualityUp2"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp2">[документация]</a>    <span class="k">def</span> <span class="nf">qualityUp2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">image</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Увеличение качества изображения или фильтрация перед распознаванием</span>
+<span class="sd">        номера OCR&quot;&quot;&quot;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">kernel</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getStructuringElement</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">MORPH_ELLIPSE</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">morphologyEx</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">MORPH_OPEN</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="n">img</span> </div>
+<div class="viewcode-block" id="paddle_ocr.qualityUp3"><a class="viewcode-back" href="../paddle_ocr.html#paddle_ocr.paddle_ocr.qualityUp3">[документация]</a>    <span class="k">def</span> <span class="nf">qualityUp3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">image</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Увеличение качества изображения или фильтрация перед распознаванием</span>
+<span class="sd">        номера OCR&quot;&quot;&quot;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">232</span><span class="p">,</span> <span class="mi">65</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">img</span>     </div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Авторские права  Университет ИИ, 2024. © — Стажировка август-октябрь 2024 — Группа Елены Гришаковой
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="http://sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'False', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+  
+
+
+</body>
+</html>

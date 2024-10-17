@@ -13,10 +13,10 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
@@ -30,11 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
         <script src="../_static/debug.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -54,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Документация
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Логотип"/>
           
           </a>
 
@@ -89,9 +92,9 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">UralTechCentre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Release</a></li>
 </ul>
 
             
@@ -153,7 +156,7 @@
 <span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s2">&quot;Gst&quot;</span><span class="p">,</span> <span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
 <span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s1">&#39;GstRtspServer&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">Gst</span><span class="p">,</span> <span class="n">GstRtspServer</span><span class="p">,</span><span class="n">GLib</span>
-<span class="kn">import</span> <span class="nn">settings</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">settings</span>
 
 <span class="n">DEBUG</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;rtsp.log&quot;</span><span class="p">,</span><span class="n">filemode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span>

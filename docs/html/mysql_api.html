@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release &mdash; документация Документация 1.0.0rc1</title>
+  <title>mysql_api module &mdash; документация Документация 1.0.0rc1</title>
   
 
   
@@ -20,7 +20,7 @@
   
   
   
-    <link rel="canonical" href="Falsemodules.html"/>
+    <link rel="canonical" href="Falsemysql_api.html"/>
   
 
   
@@ -41,8 +41,8 @@
     
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
-    <link rel="next" title="detectPlates module" href="detectPlates.html" />
-    <link rel="prev" title="УралТехЦентр Стажировка от УИИ’s documentation!" href="index.html" /> 
+    <link rel="next" title="paddle_ocr module" href="paddle_ocr.html" />
+    <link rel="prev" title="main module" href="main.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,10 +96,10 @@
             
               <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Release</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Release</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mysql_api module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="settings.html">settings module</a></li>
@@ -143,7 +143,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Release</li>
+          <li><a href="modules.html">Release</a> &raquo;</li>
+        
+      <li>mysql_api module</li>
     
   </ul>
 
@@ -153,20 +155,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="release">
-<h1>Release<a class="headerlink" href="#release" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="settings.html">settings module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
-</ul>
-</div>
+  <div class="section" id="module-mysql_api">
+<span id="mysql-api-module"></span><h1>mysql_api module<a class="headerlink" href="#module-mysql_api" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Created on Thu Oct 17 05:30:31 2024</p>
+<p>&#64;author: Стажеры группы УИИ</p>
+<dl class="py class">
+<dt id="mysql_api.mysql">
+<em class="property">class </em><code class="sig-prename descclassname">mysql_api.</code><code class="sig-name descname">mysql</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bd_login</span></em>, <em class="sig-param"><span class="n">bd_passwd</span></em>, <em class="sig-param"><span class="n">bd_host</span></em>, <em class="sig-param"><span class="n">bd_port</span></em>, <em class="sig-param"><span class="n">bd_db</span></em>, <em class="sig-param"><span class="n">bd_type</span></em>, <em class="sig-param"><span class="n">box_count</span></em>, <em class="sig-param"><span class="n">room_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mysql_api.html#mysql"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#mysql_api.mysql" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Класс работы с базой данных mySQL</p>
+<dl class="py method">
+<dt id="mysql_api.mysql.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mysql_api.html#mysql.get_status"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#mysql_api.mysql.get_status" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="mysql_api.mysql.mysql_connect">
+<code class="sig-name descname">mysql_connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mysql_api.html#mysql.mysql_connect"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#mysql_api.mysql.mysql_connect" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Функция соединения с базой данных</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mysql_api.mysql.mysql_query">
+<code class="sig-name descname">mysql_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mysql_api.html#mysql.mysql_query"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#mysql_api.mysql.mysql_query" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Функция для простого запроса в базу - без ответа</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mysql_api.mysql.update_tbl">
+<code class="sig-name descname">update_tbl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">is_car</span></em>, <em class="sig-param"><span class="n">car_num</span></em>, <em class="sig-param"><span class="n">room_name</span></em>, <em class="sig-param"><span class="n">box_num</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mysql_api.html#mysql.update_tbl"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#mysql_api.mysql.update_tbl" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -177,10 +200,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="detectPlates.html" class="btn btn-neutral float-right" title="detectPlates module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="paddle_ocr.html" class="btn btn-neutral float-right" title="paddle_ocr module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="УралТехЦентр Стажировка от УИИ’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
+        <a href="main.html" class="btn btn-neutral float-left" title="main module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
       
     </div>
   

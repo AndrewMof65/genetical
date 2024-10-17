@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="ru" >
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>rtsp_server module &mdash; документация Документация 1.0.0rc1</title>
@@ -14,10 +13,10 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
   
   
@@ -31,11 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/translations.js"></script>
         <script src="_static/debug.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -43,7 +42,7 @@
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
     <link rel="next" title="settings module" href="settings.html" />
-    <link rel="prev" title="main module" href="main.html" /> 
+    <link rel="prev" title="paddle_ocr module" href="paddle_ocr.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,9 +56,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Документация
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Логотип"/>
           
           </a>
 
@@ -92,13 +94,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">UralTechCentre</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Release</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">rtsp_server module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="settings.html">settings module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
 </ul>
 </li>
 </ul>
@@ -137,7 +143,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">UralTechCentre</a> &raquo;</li>
+          <li><a href="modules.html">Release</a> &raquo;</li>
         
       <li>rtsp_server module</li>
     
@@ -149,57 +155,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="module-rtsp_server">
-<span id="rtsp-server-module"></span><h1>rtsp_server module<a class="headerlink" href="#module-rtsp_server" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="module-rtsp_server">
+<span id="rtsp-server-module"></span><h1>rtsp_server module<a class="headerlink" href="#module-rtsp_server" title="Ссылка на этот заголовок">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="rtsp_server.GstServer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rtsp_server.</span></span><span class="sig-name descname"><span class="pre">GstServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt_mount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#GstServer"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.GstServer" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.GstServer">
+<em class="property">class </em><code class="sig-prename descclassname">rtsp_server.</code><code class="sig-name descname">GstServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fps</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">port</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">pt_mount</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#GstServer"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.GstServer" title="Ссылка на это определение">¶</a></dt>
 <dd><blockquote>
-<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">RTSPServer</span></code></p>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.GstRtspServer.RTSPServer</span></code></p>
 </div></blockquote>
 <dl class="py method">
-<dt class="sig sig-object py" id="rtsp_server.GstServer.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#GstServer.run"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.GstServer.run" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.GstServer.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#GstServer.run"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.GstServer.run" title="Ссылка на это определение">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="rtsp_server.SensorFactory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rtsp_server.</span></span><span class="sig-name descname"><span class="pre">SensorFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.SensorFactory" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.SensorFactory">
+<em class="property">class </em><code class="sig-prename descclassname">rtsp_server.</code><code class="sig-name descname">SensorFactory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fps</span></em>, <em class="sig-param"><span class="n">img_shape</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.SensorFactory" title="Ссылка на это определение">¶</a></dt>
 <dd><blockquote>
-<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">RTSPMediaFactory</span></code></p>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.GstRtspServer.RTSPMediaFactory</span></code></p>
 </div></blockquote>
 <dl class="py method">
-<dt class="sig sig-object py" id="rtsp_server.SensorFactory.do_configure">
-<span class="sig-name descname"><span class="pre">do_configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rtsp_media</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.do_configure"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.SensorFactory.do_configure" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.SensorFactory.do_configure">
+<code class="sig-name descname">do_configure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rtsp_media</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.do_configure"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.SensorFactory.do_configure" title="Ссылка на это определение">¶</a></dt>
 <dd><p>configure(self, media:GstRtspServer.RTSPMedia)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="rtsp_server.SensorFactory.do_create_element">
-<span class="sig-name descname"><span class="pre">do_create_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.do_create_element"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.SensorFactory.do_create_element" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.SensorFactory.do_create_element">
+<code class="sig-name descname">do_create_element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.do_create_element"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.SensorFactory.do_create_element" title="Ссылка на это определение">¶</a></dt>
 <dd><p>create_element(self, url:GstRtsp.RTSPUrl) -&gt; Gst.Element</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="rtsp_server.SensorFactory.indicator">
-<span class="sig-name descname"><span class="pre">indicator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.indicator"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.SensorFactory.indicator" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.SensorFactory.indicator">
+<code class="sig-name descname">indicator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.indicator"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.SensorFactory.indicator" title="Ссылка на это определение">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="rtsp_server.SensorFactory.on_need_data">
-<span class="sig-name descname"><span class="pre">on_need_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.on_need_data"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.SensorFactory.on_need_data" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.SensorFactory.on_need_data">
+<code class="sig-name descname">on_need_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.on_need_data"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.SensorFactory.on_need_data" title="Ссылка на это определение">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="rtsp_server.SensorFactory.set_image">
-<span class="sig-name descname"><span class="pre">set_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.set_image"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#rtsp_server.SensorFactory.set_image" title="Ссылка на это определение">¶</a></dt>
+<dt id="rtsp_server.SensorFactory.set_image">
+<code class="sig-name descname">set_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rtsp_server.html#SensorFactory.set_image"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#rtsp_server.SensorFactory.set_image" title="Ссылка на это определение">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
+</div>
 
 
            </div>
@@ -212,7 +218,7 @@
         <a href="settings.html" class="btn btn-neutral float-right" title="settings module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="main.html" class="btn btn-neutral float-left" title="main module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
+        <a href="paddle_ocr.html" class="btn btn-neutral float-left" title="paddle_ocr module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
       
     </div>
   

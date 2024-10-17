@@ -1,0 +1,7 @@
+yolo\_ocr module
+================
+
+.. automodule:: yolo_ocr
+   :members:
+   :undoc-members:
+   :show-inheritance:

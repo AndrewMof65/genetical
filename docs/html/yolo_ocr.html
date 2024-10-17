@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release &mdash; документация Документация 1.0.0rc1</title>
+  <title>yolo_ocr module &mdash; документация Документация 1.0.0rc1</title>
   
 
   
@@ -20,7 +20,7 @@
   
   
   
-    <link rel="canonical" href="Falsemodules.html"/>
+    <link rel="canonical" href="Falseyolo_ocr.html"/>
   
 
   
@@ -41,8 +41,7 @@
     
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
-    <link rel="next" title="detectPlates module" href="detectPlates.html" />
-    <link rel="prev" title="УралТехЦентр Стажировка от УИИ’s documentation!" href="index.html" /> 
+    <link rel="prev" title="yolo_cars module" href="yolo_cars.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,7 +95,7 @@
             
               <p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Release</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Release</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
@@ -104,7 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="settings.html">settings module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">yolo_ocr module</a></li>
 </ul>
 </li>
 </ul>
@@ -143,7 +142,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Release</li>
+          <li><a href="modules.html">Release</a> &raquo;</li>
+        
+      <li>yolo_ocr module</li>
     
   </ul>
 
@@ -153,20 +154,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="release">
-<h1>Release<a class="headerlink" href="#release" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="detectPlates.html">detectPlates module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mysql_api.html">mysql_api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="paddle_ocr.html">paddle_ocr module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rtsp_server.html">rtsp_server module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="settings.html">settings module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yolo_cars.html">yolo_cars module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="yolo_ocr.html">yolo_ocr module</a></li>
-</ul>
-</div>
+  <div class="section" id="module-yolo_ocr">
+<span id="yolo-ocr-module"></span><h1>yolo_ocr module<a class="headerlink" href="#module-yolo_ocr" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Created on Thu Oct 17 03:32:35 2024</p>
+<p>&#64;author: Стажеры группы УИИ</p>
+<dl class="py class">
+<dt id="yolo_ocr.yolo_ocr">
+<em class="property">class </em><code class="sig-prename descclassname">yolo_ocr.</code><code class="sig-name descname">yolo_ocr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ocr1_pt</span></em>, <em class="sig-param"><span class="n">ocr2_pt</span></em>, <em class="sig-param"><span class="n">quality_up</span></em>, <em class="sig-param"><span class="n">letters</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_ocr.html#yolo_ocr"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_ocr.yolo_ocr" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<dl class="py method">
+<dt id="yolo_ocr.yolo_ocr.detect_num">
+<code class="sig-name descname">detect_num</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">images</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_ocr.html#yolo_ocr.detect_num"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_ocr.yolo_ocr.detect_num" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Распознавание номера - модель YOLO_OBB
+Свой датасет - обучение</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="yolo_ocr.yolo_ocr.qualityUp">
+<code class="sig-name descname">qualityUp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_ocr.html#yolo_ocr.qualityUp"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_ocr.yolo_ocr.qualityUp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Увеличение качества изображения или фильтрация перед распознаванием
+номера OCR</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="yolo_ocr.yolo_ocr.yolo_proc">
+<code class="sig-name descname">yolo_proc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">results</span></em>, <em class="sig-param"><span class="n">res_map</span></em>, <em class="sig-param"><span class="n">imgs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/yolo_ocr.html#yolo_ocr.yolo_proc"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#yolo_ocr.yolo_ocr.yolo_proc" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -177,10 +195,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="detectPlates.html" class="btn btn-neutral float-right" title="detectPlates module" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="УралТехЦентр Стажировка от УИИ’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
+        <a href="yolo_cars.html" class="btn btn-neutral float-left" title="yolo_cars module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Предыдущая</a>
       
     </div>
   

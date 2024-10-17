@@ -1,0 +1,7 @@
+mysql\_api module
+=================
+
+.. automodule:: mysql_api
+   :members:
+   :undoc-members:
+   :show-inheritance:

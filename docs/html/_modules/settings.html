@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>settings &mdash; документация Документация 1.0.0rc1</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="False_modules/settings.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/debug.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Логотип"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0rc1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Release</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Документация</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Код модуля</a> &raquo;</li>
+        
+      <li>settings</li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Исходный код settings</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Wed Aug  7 14:56:29 2024</span>
+
+<span class="sd">@author: Стажеры группы УИИ</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<div class="viewcode-block" id="settings"><a class="viewcode-back" href="../settings.html#settings.settings">[документация]</a><span class="k">class</span> <span class="nc">settings</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Класс констант - статических настроек проекта&quot;&quot;&quot;</span>
+
+    <span class="n">YOLO_CAR_PATH</span> <span class="o">=</span> <span class="s2">&quot;yolo_obb/yolov11m_car.pt&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Путь к весовым коэффициентам для распознавания автомобиля в боксе&quot;&quot;&quot;</span>
+    
+    <span class="n">YOLO_OBB_PATH</span> <span class="o">=</span> <span class="s2">&quot;yolo_obb/yolov8s_obb.pt&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Путь к весовым коэффициентам для распознавания номерной рамки на автомобиле&quot;&quot;&quot;</span>
+    
+    <span class="n">YOLO_OCR1_PATH</span> <span class="o">=</span> <span class="s2">&quot;yolo_obb/yolo11m_ocr1.pt&quot;</span> 
+    <span class="sd">&quot;&quot;&quot;Путь к весовым коэффициентам для распознавания номера на номерной рамк автомобиля</span>
+<span class="sd">    для первых двух боксов&quot;&quot;&quot;</span>
+    <span class="n">YOLO_OCR2_PATH</span> <span class="o">=</span> <span class="s2">&quot;yolo_obb/yolo11m_ocr2.pt&quot;</span> 
+    <span class="sd">&quot;&quot;&quot;Путь к весовым коэффициентам для распознавания номера на номерной рамк автомобиля</span>
+<span class="sd">    для последних двух боксов&quot;&quot;&quot;</span>
+    
+    <span class="n">PADDLE_OCR_PATH</span> <span class="o">=</span> <span class="s2">&quot;paddle&quot;</span> 
+    <span class="sd">&quot;&quot;&quot;Путь к весовым коэффициентам модели PADDLE&quot;&quot;&quot;</span>
+    
+    <span class="n">DEVICE</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span>
+
+    <span class="n">BOXES</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;pt1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;pt2&quot;</span><span class="p">:(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="s2">&quot;color&quot;</span><span class="p">:(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;thickness&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span> <span class="c1"># Координаты бокса на видео, цвет BGR, толщина линии</span>
+            <span class="p">{</span><span class="s2">&quot;pt1&quot;</span><span class="p">:(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;pt2&quot;</span><span class="p">:(</span><span class="mi">950</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="s2">&quot;color&quot;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;thickness&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;pt1&quot;</span><span class="p">:(</span><span class="mi">980</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;pt2&quot;</span><span class="p">:(</span><span class="mi">1270</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="s2">&quot;color&quot;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="s2">&quot;thickness&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;pt1&quot;</span><span class="p">:(</span><span class="mi">1290</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span><span class="s2">&quot;pt2&quot;</span><span class="p">:(</span><span class="mi">1700</span><span class="p">,</span> <span class="mi">750</span><span class="p">),</span><span class="s2">&quot;color&quot;</span><span class="p">:(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span><span class="s2">&quot;thickness&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span>
+    <span class="sd">&quot;&quot;&quot;Координаты бокса на видео, цвет BGR, толщина линии&quot;&quot;&quot;</span>
+
+    <span class="n">LETTERS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span> <span class="p">,</span><span class="s1">&#39;1&#39;</span> <span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span> <span class="p">,</span><span class="s1">&#39;4&#39;</span> <span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span> <span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+    <span class="sd">&quot;&quot;&quot;Символы на ноерах - не трогать&quot;&quot;&quot;</span>
+    
+    <span class="n">K_SIZE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.4</span><span class="p">]</span> 
+    <span class="sd">&quot;&quot;&quot;Коэффициент увеличения картинки каждого бокса для детекции рамки номера&quot;&quot;&quot;</span>
+    <span class="n">MIN_AREA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6000</span><span class="p">,</span><span class="mi">7000</span><span class="p">,</span><span class="mi">8000</span><span class="p">,</span><span class="mi">8000</span><span class="p">]</span> 
+    <span class="sd">&quot;&quot;&quot;Минимальная площадь прямоугольника номера для каждого бокса с учетом K_SIZE&quot;&quot;&quot;</span>
+    <span class="n">RESOLUTION</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;Разрешение камеры&quot;&quot;&quot;</span>
+    <span class="n">OCR_SAVE</span> <span class="o">=</span> <span class="kc">False</span> 
+    <span class="sd">&quot;&quot;&quot; Включение сохрпнения изображения номеров для датасета&quot;&quot;&quot;</span>
+    <span class="n">ANNOTATION</span> <span class="o">=</span> <span class="kc">False</span> 
+    <span class="sd">&quot;&quot;&quot; Для разметки датасета&quot;&quot;&quot;</span>
+    <span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span> 
+    <span class="sd">&quot;&quot;&quot;Для отладки&quot;&quot;&quot;</span>
+    <span class="n">TEST</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="sd">&quot;&quot;&quot;Для тестирования на файлаз, а не на потоке&quot;&quot;&quot;</span>
+    
+    <span class="n">NUMSHOTS</span><span class="o">=</span><span class="mi">200</span>
+    <span class="sd">&quot;&quot;&quot;Для отладки Номер кадра в видеофайле&quot;&quot;&quot;</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Авторские права  Университет ИИ, 2024. © — Стажировка август-октябрь 2024 — Группа Елены Гришаковой
+
+    </p>
+  </div>
+    
+    
+    
+    Собрано при помощи <a href="http://sphinx-doc.org/">Sphinx</a> с использованием
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">темы,</a>
+    
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'False', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+  
+
+
+</body>
+</html>
